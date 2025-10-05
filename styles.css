@@ -142,7 +142,9 @@
             display: inline-block;
         }
 
-        .js { background: #f1e05a; }
-        .python { background: #3572A5; }
-        .html { background: #e34c26; }
-        .css { background: #563d7c; }
+        .language-dot.javascript { background-color: #f1e05a; }
+        .language-dot.python { background-color: #3572A5; }
+        .language-dot.html { background-color: #e34c26; }
+        .language-dot.unknown { background-color: #cccccc; } 
+        .language-dot.typescript { background-color: #024dce; }
+        .language-dot.java{ background-color: #ed7a07; }
