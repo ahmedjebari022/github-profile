@@ -8,59 +8,37 @@
     <script type="module" src="script.js"></script>
     
 </head>
-<body>
+<body>  
+   
+    
+
+
+    <form id="form" class="search-bar" aria-label="Search GitHub user" hidden>
+        <label for="user_name" class="visually-hidden">GitHub username</label>
+        <input id="user_name" name="username" type="search" placeholder="enter github username" autocomplete="off" />
+        <button id="button" type="submit" >Search</button>
+    </form>
+    
+    <div class="loader" role="status" aria-live="polite" aria-label="Loading" hidden>
+        <div class="pixel-loader" aria-hidden="false">
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="loader-text">Loading...</div>
+    </div>    
+    <!-- Error panel (inserted, hidden by default; toggle 'hidden' from JS) -->
+    <div class="error-box" role="alert" aria-live="assertive" hidden>
+        <div class="error-icon" aria-hidden="true">✖</div>
+        <div class="error-content">
+            <strong class="error-title">Something went wrong</strong>
+            <div class="error-message">Unable to fetch user data. Please check the username and try again.</div>
+        </div>
+        
+    </div>  
+
 
     <div class="container">
-        <div class="profile-section">
-            <img src="https://via.placeholder.com/200/58a6ff/000000?text=AVATAR" alt="Profile" class="profile-image">
-            <div class="profile-info">
-                <h1>Alex Developer</h1>
-                <div class="username">@alexcodes</div>
-                <div class="bio">
-                    Full-stack developer who loves pixel art and retro gaming. 
-                    Building cool stuff one commit at a time!
-                </div>
-                <div class="stats">
-                    <div class="stat-item">
-                        <strong>42</strong> followers
-                    </div>
-                    <div class="stat-item">
-                        <strong>38</strong> following
-                    </div>
-                    <div class="stat-item">
-                        <strong>15</strong> repositories
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="repos-section">
-            <h2> Repositories</h2>
-            <div class="repos-grid">
-                
-
-                <div class="repo-card">
-                    <div class="repo-header">
-                        <div class="repo-icon"></div>
-                        <div class="repo-name">pixel-art-generator</div>
-                    </div>
-                    <div class="repo-description">
-                        Generate pixel art from images using Python. Includes CLI and web interface.
-                    </div>
-                    <div class="repo-footer">
-                        <div class="repo-stat">
-                            <span class="language-dot python"></span>
-                            Python
-                        </div>
-                        <div class="repo-stat">⭐ 189</div>
-                        <div class="repo-stat">🔄 32</div>
-                    </div>
-                </div>
-
-                
-                </div>
-            </div>
-        </div>
+         
+</div>
     </div>
 </body>
 </html>

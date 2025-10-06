@@ -1,5 +1,4 @@
-
-        * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -148,3 +147,233 @@
         .language-dot.unknown { background-color: #cccccc; } 
         .language-dot.typescript { background-color: #024dce; }
         .language-dot.java{ background-color: #ed7a07; }
+
+        /* Basic pixel-art themed styling for the username input and button */
+        .search-bar,
+        #user-form {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin: 0 auto 24px;
+            max-width: 760px;
+            padding: 12px;
+            background: #0f1720;
+            border: 3px solid #30363d;
+            box-shadow: 6px 6px 0 #000;
+        }
+
+        .search-bar input[type="search"],
+        #user_name {
+            flex: 1 1 auto;
+            padding: 10px 14px;
+            background: #0d1117;
+            color: #c9d1d9;
+            border: 2px solid #30363d;
+            outline: none;
+            font-size: 16px;
+            font-family: inherit;
+            box-shadow: inset 2px 2px 0 rgba(0,0,0,0.6);
+        }
+
+        .search-bar input::placeholder,
+        #user_name::placeholder {
+            color: #6b7280;
+        }
+
+        .search-bar input:focus,
+        #user_name:focus {
+            border-color: #58a6ff;
+            box-shadow: 0 0 0 4px rgba(88,166,255,0.06);
+        }
+
+        .search-bar button,
+        #button {
+            background: #58a6ff;
+            color: #0d1117;
+            border: 2px solid #000;
+            padding: 10px 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        .search-bar button:hover,
+        #button:hover {
+            filter: brightness(0.95);
+        }
+
+        /* Pixel-art loader */
+.loader {
+    display: inline-flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    background: #0f1720; /* matches project background */
+    border: 3px solid #30363d;
+    box-shadow: 6px 6px 0 #000;
+    color: #c9d1d9;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: none;
+    border-radius: 2px;
+}
+
+.pixel-loader {
+    display: inline-flex;
+    gap: 6px;
+    align-items: flex-end;
+    height: 20px;
+}
+
+.pixel-loader span {
+    width: 14px;
+    height: 14px;
+    background: #58a6ff;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0 #000; /* chunky pixel shadow */
+    display: block;
+    image-rendering: pixelated;
+    transform-origin: center bottom;
+    /* make animations feel stepped/pixel-like */
+    animation: pixel-bounce 800ms steps(1) infinite;
+}
+
+/* staggered timing for a wave */
+.pixel-loader span:nth-child(1){ animation-delay: 0ms; }
+.pixel-loader span:nth-child(2){ animation-delay: 120ms; }
+.pixel-loader span:nth-child(3){ animation-delay: 240ms; }
+.pixel-loader span:nth-child(4){ animation-delay: 360ms; }
+
+@keyframes pixel-bounce {
+    0%   { transform: translateY(0); opacity: 0.25; }
+    50%  { transform: translateY(-8px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.25; }
+}
+
+.loader-text {
+    color: #c9d1d9;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+}
+
+/* helper class: use [hidden] attribute in HTML and toggle it in JS when needed */
+.loader[hidden] { display: none !important; }
+
+/* Error box (pixel-art / project vibe) */
+.error-box{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    max-width:760px;
+    margin:0 auto 18px;
+    padding:10px 12px;
+    background:#0f1720;
+    border:3px solid #8b2626; /* deep red border */
+    box-shadow:6px 6px 0 #000;
+    color:#ffdcdc;
+    border-radius:2px;
+}
+
+.error-icon{
+    width:36px;
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#8b2626;
+    color:#0d1117;
+    font-weight:900;
+    border:2px solid #000;
+    box-shadow:4px 4px 0 #000;
+    font-size:18px;
+}
+
+.error-content{
+    flex:1 1 auto;
+    line-height:1.1;
+}
+
+.error-title{
+    display:block;
+    color:#ffdcdc;
+    font-weight:800;
+    margin-bottom:4px;
+}
+
+.error-message{
+    color:#e6b8b8;
+    font-size:13px;
+}
+
+/* Dismiss button styled like project buttons */
+.error-dismiss{
+    background:#ff7b7b;
+    color:#0d1117;
+    border:2px solid #000;
+    padding:8px 10px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:4px 4px 0 #000;
+    align-self:flex-start;
+}
+
+/* small screens */
+@media (max-width:600px){
+    .error-box{ flex-direction:column; align-items:stretch; }
+    .error-dismiss{ width:100%; margin-top:8px; }
+}
+
+        @media (max-width: 600px) {
+            .search-bar,
+            #user-form {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .search-bar button,
+            #button {
+                width: 100%;
+            }
+        }
+
+        /* ensure the error box respects the [hidden] attribute */
+.error-box[hidden] {
+    display: none !important;
+}
+
+/* empty repos message (targets the inline <p> you inject) */
+.repos-grid > p {
+    margin: 0;
+    padding: 28px;
+    text-align: center;
+    color: #8b949e;
+    font-size: 14px;
+    background: rgba(12,17,22,0.02);
+    border-top: 1px dashed rgba(139,148,158,0.08);
+    border-radius: 2px;
+}
+
+/* ensure repos grid keeps some reserved space and layout consistency */
+.repos-grid {
+    min-height: 120px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+}
+
+/* center the global loader in the viewport (pixel-art vibe preserved) */
+.loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    /* keep existing visual treatments (background, border, shadow) from your rules */
+}
+
+/* make sure loader internals render nicely when centered */
+.loader .pixel-loader,
+.loader .loader-text {
+    display: inline-block;
+    vertical-align: middle;
+}
